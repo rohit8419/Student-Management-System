@@ -26,10 +26,10 @@ app.use("/api/dashboard", dashboardRouter);
 app.use((req, res) => res.status(404).json({ error: "Route not found" }));
 
 // eslint-disable-next-line no-unused-vars
-app.use((err, req, res, next) => {
-  console.error(err);
-  res.status(500).json({ error: "Internal server error" });
-});
+// app.use((err, req, res, next) => {
+//   console.error(err);
+//   res.status(500).json({ error: "Internal server error" });
+// });
 
 app.use(cors({
   origin: "https://student-management-system-ebon-kappa.vercel.app"
