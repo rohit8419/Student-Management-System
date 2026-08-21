@@ -5,7 +5,7 @@
 
 const express = require("express");
 const cors = require("cors");
-
+import cors from "cors";
 require("./db/database"); // initializes + seeds sms.db on first run
 
 const studentsRouter = require("./routes/students");
@@ -31,6 +31,10 @@ app.use((err, req, res, next) => {
   console.error(err);
   res.status(500).json({ error: "Internal server error" });
 });
+
+app.use(cors({
+  origin: "https://student-management-system-ebon-kappa.vercel.app"
+}));
 
 app.listen(PORT, () => {
   console.log(`SMS backend running at http://localhost:${PORT}`);
