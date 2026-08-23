@@ -18,7 +18,9 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-app.get("/api/health", (req, res) => res.json({ ok: true, service: "sms-backend" }));
+app.get("/api/health", (req, res) =>
+  res.json({ ok: true, service: "sms-backend" }),
+);
 
 app.use("/api/students", studentsRouter);
 app.use("/api/courses", coursesRouter);
@@ -33,5 +35,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`SMS backend running at http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
