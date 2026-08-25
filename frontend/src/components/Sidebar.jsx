@@ -1,4 +1,6 @@
 import React from "react";
+import campusLogo from "../assets/campus-logo.png";
+
 import { NavLink } from "react-router-dom";
 import {
   IconGrid,
@@ -18,8 +20,7 @@ export default function Sidebar({ open, onClose }) {
         aria-label="Main navigation"
       >
         <div className="brand">
-          <img className="brand-mark" src="./assets/campus-logo.png" alt="c" />
-
+          <img className="brand-mark" src={campusLogo} alt="c" />
           <div className="brand-text">
             <div className="name">Campus</div>
             <div className="sub">Student Registry</div>
