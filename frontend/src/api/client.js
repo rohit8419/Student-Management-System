@@ -2,10 +2,11 @@
 // Thin wrapper around fetch for talking to the Express/SQLite backend.
 // Vite's dev server proxies /api -> http://localhost:5000 (see vite.config.js).
 
-const BASE = "/api";
+// const BASE = "/api";
+const API_URL = "https://student-management-system-mzjv.onrender.com/api";
 
 async function request(path, options = {}) {
-  const res = await fetch(`${BASE}${path}`, {
+  const res = await fetch(`${API_URL}${path}`, {
     headers: { "Content-Type": "application/json" },
     ...options,
   });
